@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using ECS.Redesign;
 
 namespace ECS.UnitTests
 {
@@ -10,7 +11,7 @@ namespace ECS.UnitTests
         {
 
             //Heater Setup
-
+            
         }
 
         //Heater Tests
