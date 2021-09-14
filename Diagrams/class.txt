@@ -1,0 +1,27 @@
+@startuml
+
+class ECS {
+      -_threashold: int
+      -_tempSensor: TempSensor
+      -_heater: Heater
+      +ECS(thr: int)
+      +Regulate(): void
+      +RunSelfTest(): bool
+}
+
+class TempSensor {
+      -gen: Random
+      +GetTemp: int
+      +RunSelfTest(): bool
+}
+
+class Heater {
+      +TurnOn(): void
+      +TurnOff: void
+      +RunSelfTest: bool
+}
+
+ECS *-- TempSensor
+ECS *-- Heater
+
+@enduml

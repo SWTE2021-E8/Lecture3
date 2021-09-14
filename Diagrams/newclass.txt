@@ -1,0 +1,43 @@
+@startuml
+
+class ECS {
+      -_threashold: int
+      -_tempSensor: TempSensor
+      -_heater: Heater
+      +ECS(thr: int)
+      +Regulate(): void
+      +RunSelfTest(): bool
+}
+
+interface ITempSensor {
+      +RunSelfTest(): bool
+}
+
+class TempSensor {
+      -gen: Random
+      +GetTemp: int
+}
+
+class FakeSensor {
+}
+
+interface IHeater {
+      +TurnOn(): void
+      +TurnOff(): void
+      +RunSelfTest(): bool
+}
+
+class Heater {
+}
+
+class FakeHeater {
+}
+
+ECS *-- ITempSensor
+ECS *-- IHeater
+ITempSensor <|-- TempSensor
+ITempSensor <|-- FakeSensor
+IHeater <|-- Heater
+IHeater <|-- FakeHeater
+
+@enduml
