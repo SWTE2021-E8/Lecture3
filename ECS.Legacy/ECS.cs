@@ -6,7 +6,7 @@ namespace ECS.Legacy
     {
         private int _threshold;
         private readonly TempSensor _tempSensor;
-        private readonly Heater _heater;
+        private readonly IHeater _heater;
 
         public ECS(int thr)
         {
