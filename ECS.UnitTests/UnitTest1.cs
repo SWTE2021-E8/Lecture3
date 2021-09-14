@@ -5,20 +5,27 @@ namespace ECS.UnitTests
 {
     public class Tests
     {
-
+        IHeater heater;
         [SetUp]
         public void Setup()
         {
+            heater = new Heater();
 
-            //Heater Setup
-            
         }
 
         //Heater Tests
         [Test]
-        public void Test1()
+        public void TurnOnHeater_returnIsHeatingTrue()
         {
-            Assert.Pass();
+            heater.TurnOn();
+            Assert.IsTrue(heater.IsHeating());
+        }
+
+        [Test]
+        public void TurnOffHeater_returnIsHeatingFalse()
+        {
+            heater.TurnOff();
+            Assert.IsFalse(heater.IsHeating());
         }
     }
 }
