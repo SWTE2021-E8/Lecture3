@@ -19,6 +19,24 @@ namespace ECS.Legacy
         public bool RunSelfTest()
         {
             return true;
+            
+    }
+
+        class FakeTempSensor : ITempSensor
+        {
+            private int _gen;
+            public int GetTemp()
+            {
+                return (_gen);
+            }
+
+            public void SetTemp(int gen)
+            {
+                _gen = gen;
+            }
+            public bool RunSelfTest()
+            {
+                return (true);
+            }
         }
     }
-}
