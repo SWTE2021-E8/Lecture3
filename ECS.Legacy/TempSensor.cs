@@ -2,12 +2,7 @@
 
 namespace ECS.Legacy
 {
-    interface ITempSensor
-    {
-        public int GetTemp();
-        public bool RunSelfTest();
-    }
-    internal class TempSensor : ITempSensor
+    internal class TempSensor
     {
         private Random gen = new Random();
 
