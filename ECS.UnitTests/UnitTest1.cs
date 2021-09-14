@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using ECS.Redesign;
+using NUnit.Framework.Constraints;
 
 namespace ECS.UnitTests
 {
@@ -15,6 +16,7 @@ namespace ECS.UnitTests
 
         //Heater Tests
         [Test]
+<<<<<<< Updated upstream
         public void TurnOnHeater_returnIsHeatingTrue()
         {
             heater.TurnOn();
@@ -26,6 +28,14 @@ namespace ECS.UnitTests
         {
             heater.TurnOff();
             Assert.IsFalse(heater.IsHeating());
+=======
+        public void ECSOverThreshold()
+        {
+            Redesign.ECS uut = new Redesign.ECS(22);
+            uut.SetThreshold(23);
+
+            
+>>>>>>> Stashed changes
         }
     }
 }

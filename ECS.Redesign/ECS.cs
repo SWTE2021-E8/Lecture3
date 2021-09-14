@@ -1,6 +1,7 @@
 ﻿using System;
+using ECS.Legacy;
 
-namespace ECS.Legacy
+namespace ECS.Redesign
 {
     public class ECS
     {
