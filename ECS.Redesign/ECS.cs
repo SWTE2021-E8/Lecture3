@@ -1,5 +1,5 @@
 ﻿using System;
-using ECS.Legacy;
+using ECS.Redesign;
 
 namespace ECS.Redesign
 {

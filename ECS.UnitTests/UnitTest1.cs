@@ -7,6 +7,7 @@ namespace ECS.UnitTests
     public class Tests
     {
         IHeater heater;
+
         [SetUp]
         public void Setup()
         {
@@ -16,7 +17,7 @@ namespace ECS.UnitTests
 
         //Heater Tests
         [Test]
-<<<<<<< Updated upstream
+
         public void TurnOnHeater_returnIsHeatingTrue()
         {
             heater.TurnOn();
@@ -28,14 +29,15 @@ namespace ECS.UnitTests
         {
             heater.TurnOff();
             Assert.IsFalse(heater.IsHeating());
-=======
-        public void ECSOverThreshold()
-        {
-            Redesign.ECS uut = new Redesign.ECS(22);
-            uut.SetThreshold(23);
 
-            
->>>>>>> Stashed changes
+
+            //   // public void ECSOverThreshold()
+            //{
+            //    //Redesign.ECS uut = new Redesign.ECS(22);
+            //    //uut.SetThreshold(23);
+
+
+            //}
         }
     }
 }

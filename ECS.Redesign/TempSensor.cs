@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace ECS.Legacy
+namespace ECS.Redesign
 {
     interface ITempSensor
     {
         public int GetTemp();
         public bool RunSelfTest();
     }
+
     internal class TempSensor : ITempSensor
     {
         private Random gen = new Random();
@@ -19,12 +20,13 @@ namespace ECS.Legacy
         public bool RunSelfTest()
         {
             return true;
-            
-    }
+
+        }
 
         class FakeTempSensor : ITempSensor
         {
             private int _gen;
+
             public int GetTemp()
             {
                 return (_gen);
@@ -34,9 +36,11 @@ namespace ECS.Legacy
             {
                 _gen = gen;
             }
+
             public bool RunSelfTest()
             {
                 return (true);
             }
         }
     }
+}
