@@ -6,22 +6,20 @@ namespace ECS.UnitTests
 {
     public class Tests
     {
-        IHeater heater;
-
+        FakeTempSensor tempSensor = new FakeTempSensor();
+        fakeHeater heater = new fakeHeater(false);
+        private Redesign.ECS control;
         [SetUp]
         public void Setup()
         {
-            heater = new Heater();
-
+            control = new Redesign.ECS(23, tempSensor, heater);
         }
 
         //Heater Tests
         [Test]
-
-        public void TurnOnHeater_returnIsHeatingTrue()
+        public void ESC_overthreshold()
         {
-            heater.TurnOn();
-            Assert.IsTrue(heater.IsHeating());
+            tempSensor.SetTemp(24);
         }
 
         [Test]
