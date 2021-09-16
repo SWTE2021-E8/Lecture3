@@ -38,7 +38,7 @@ namespace ECS.Redesign
     {
         public bool heating { private set; get; }
 
-        fakeHeater(bool heatingcon)
+        public fakeHeater(bool heatingcon)
         {
             heating = heatingcon;
         }

@@ -24,7 +24,7 @@ namespace ECS.Redesign
         }
     }
 
-    class FakeTempSensor : ITempSensor
+   public class FakeTempSensor : ITempSensor
     {
         private int _gen;
 

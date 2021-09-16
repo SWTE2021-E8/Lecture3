@@ -20,12 +20,19 @@ namespace ECS.UnitTests
         public void ESC_overthreshold()
         {
             tempSensor.SetTemp(24);
+            control.Regulate();
+            Assert.AreEqual(false,heater.heating);
         }
 
         [Test]
-        public void TurnOffHeater_returnIsHeatingFalse()
+        public void ESC_underthreshold()
         {
-            
+            tempSensor.SetTemp(22);
+            control.Regulate();
+            Assert.AreEqual(true,heater.heating);
         }
+
+        [Test]
+
     }
 }
