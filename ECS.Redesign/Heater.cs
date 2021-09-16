@@ -1,6 +1,13 @@
 ﻿namespace ECS.Redesign
-
 {
+    public interface IHeater
+    {
+        public bool IsHeating();
+        public void TurnOn();
+        public void TurnOff();
+        public bool RunSelfTest();
+    }
+
     public class Heater:IHeater
     {
         public bool heating { private set; get; } = false;
@@ -24,12 +31,5 @@
         {
             return heating;
         }
-    }
-    public interface IHeater
-    {
-        public bool IsHeating();
-        public void TurnOn();
-        public void TurnOff();
-        public bool RunSelfTest();
     }
 }

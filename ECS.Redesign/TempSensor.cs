@@ -2,13 +2,13 @@
 
 namespace ECS.Redesign
 {
-    interface ITempSensor
+    public interface ITempSensor
     {
         public int GetTemp();
         public bool RunSelfTest();
     }
 
-    internal class TempSensor : ITempSensor
+    public class TempSensor : ITempSensor
     {
         private Random gen = new Random();
 
@@ -22,25 +22,25 @@ namespace ECS.Redesign
             return true;
 
         }
+    }
 
-        class FakeTempSensor : ITempSensor
+    class FakeTempSensor : ITempSensor
+    {
+        private int _gen;
+
+        public int GetTemp()
         {
-            private int _gen;
+            return (_gen);
+        }
 
-            public int GetTemp()
-            {
-                return (_gen);
-            }
+        public void SetTemp(int gen)
+        {
+            _gen = gen;
+        }
 
-            public void SetTemp(int gen)
-            {
-                _gen = gen;
-            }
-
-            public bool RunSelfTest()
-            {
-                return (true);
-            }
+        public bool RunSelfTest()
+        {
+            return (true);
         }
     }
 }
