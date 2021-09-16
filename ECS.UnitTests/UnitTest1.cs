@@ -45,7 +45,7 @@ namespace ECS.UnitTests
         public void ESC_changetreshold()
         {
             control.SetThreshold(25);
-            Assert.AreEqual(25, control.GetThreshold()
+            Assert.AreEqual(25, control.GetThreshold());
         }
     }
 }
