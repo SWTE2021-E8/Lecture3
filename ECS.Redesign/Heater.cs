@@ -1,4 +1,6 @@
-﻿namespace ECS.Redesign
+﻿using System;
+
+namespace ECS.Redesign
 {
     public interface IHeater
     {
@@ -30,6 +32,34 @@
         public bool IsHeating()
         {
             return heating;
+        }
+    }
+    public class fakeHeater : IHeater
+    {
+        public bool heating { private set; get; }
+
+        fakeHeater(bool heatingcon)
+        {
+            heating = heatingcon;
+        }
+        public bool IsHeating()
+        {
+            return heating;
+        }
+
+        public void TurnOn()
+        {
+            heating = true;
+        }
+
+        public void TurnOff()
+        {
+            heating = false;
+        }
+
+        public bool RunSelfTest()
+        {
+            return true;
         }
     }
 }

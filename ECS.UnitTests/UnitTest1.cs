@@ -27,17 +27,7 @@ namespace ECS.UnitTests
         [Test]
         public void TurnOffHeater_returnIsHeatingFalse()
         {
-            heater.TurnOff();
-            Assert.IsFalse(heater.IsHeating());
-
-
-            //   // public void ECSOverThreshold()
-            //{
-            //    //Redesign.ECS uut = new Redesign.ECS(22);
-            //    //uut.SetThreshold(23);
-
-
-            //}
+            
         }
     }
 }
