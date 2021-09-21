@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using ECS.Redesign;
+using Microsoft.VisualBasic;
 using NUnit.Framework.Constraints;
 
 namespace ECS.UnitTests
@@ -40,11 +41,13 @@ namespace ECS.UnitTests
             Assert.AreEqual(false,heater.heating);
         }
 
-         public void ESC_Atthreshold()
+
+        [Test]
+        public void ESC_changetreshold()
         {
-            tempSensor.SetTemp(23);
-            control.Regulate();
-            Assert.AreEqual(false,heater.heating);
+            control.SetThreshold(25);
+            Assert.AreEqual(25, control.GetThreshold());
+
         }
     }
 }
