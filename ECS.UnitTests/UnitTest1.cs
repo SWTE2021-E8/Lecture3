@@ -39,5 +39,12 @@ namespace ECS.UnitTests
             control.Regulate();
             Assert.AreEqual(false,heater.heating);
         }
+
+         public void ESC_Atthreshold()
+        {
+            tempSensor.SetTemp(23);
+            control.Regulate();
+            Assert.AreEqual(false,heater.heating);
+        }
     }
 }
